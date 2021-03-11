@@ -1,0 +1,18 @@
+Ignore the following
+.exe
+.tfstate
+.backup
+.terraform
+.tfstate.backup
+.log
+terraform.tfstate
+terraform.tfstate.backup
+.tfvars
+*.tfvars
+*/**/.tfvars
+variables.sh
+.terraform.lock.hcl
+crash.log
+.terraform.tfstate.lock.info
+sedemo.tfvars
+sedemo_properties.tfvars
