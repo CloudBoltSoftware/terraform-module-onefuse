@@ -20,5 +20,5 @@ variable "dns_policy" {
 
 variable "template_properties" {
   type = map
-  default = ""
+  default = {}
 }
