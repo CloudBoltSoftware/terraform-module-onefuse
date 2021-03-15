@@ -35,7 +35,7 @@ output "secondary_dns" {
 }
 
 output "fqdn" {
-  value = module.name.id
+  value = module.name.fqdn
 }
 
 output "ad_ou" {
