@@ -24,7 +24,7 @@ module "dns" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//dns"
     policy = var.dns_policy
     ip_address = module.ipam.ip_address
-    dns_zones = module.name.dns_suffix
+    dns_zones = module.name[count.index].dns_suffix
     hostname = "${module.name[count.index].hostname == "" ? var.hostname : module.name[count.index].hostname}"
     template_properties = var.template_properties
 }
