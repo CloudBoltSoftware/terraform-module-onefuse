@@ -8,11 +8,6 @@ variable "ad_policy" {
 
 }
 
-variable "use_ad" {
-  type = string
-
-}
-
 variable "ipam_policy" {
   type = string
 
