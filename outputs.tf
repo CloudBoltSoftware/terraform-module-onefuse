@@ -7,31 +7,31 @@ output "dns_suffix" {
 }
 
 output "ip_address" {
-  value = ["${module.ipam..*.ip_address}"]
+  value = ["${module.ipam.*.ip_address}"]
 }
 
 output "netmask" {
-  value = ["${module.ipam..*.netmask}"]
+  value = ["${module.ipam.*.netmask}"]
 }
 
 output "gateway" {
-  value = ["${module.ipam..*.gateway}"]
+  value = ["${module.ipam.*.gateway}"]
 }
 
 output "network" {
-  value = ["${module.ipam..*.network}"]
+  value = ["${module.ipam.*.network}"]
 }
 
 output "subnet" {
-  value = ["${module.ipam..*.subnet}"]
+  value = ["${module.ipam.*.subnet}"]
 }
 
 output "primary_dns" {
-  value = ["${module.ipam..*.primary_dns}"]
+  value = ["${module.ipam.*.primary_dns}"]
 }
 
 output "secondary_dns" {
-  value = ["${module.ipam..*.secondary_dns}"]
+  value = ["${module.ipam.*.secondary_dns}"]
 }
 
 output "fqdn" {
