@@ -18,6 +18,11 @@ variable "dns_policy" {
 
 }
 
+variable "instance_count" {
+  type = string
+  default = "1"
+}
+
 variable "template_properties" {
   type = map
 }
