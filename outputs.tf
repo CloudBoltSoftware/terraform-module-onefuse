@@ -3,7 +3,7 @@ output "hostname" {
 }
 
 output "dns_suffix" {
-  value = module.name.dns_suffix
+  value = ["${module.name.*.dns_suffix}"]
 }
 
 output "ip_address" {
