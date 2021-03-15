@@ -5,7 +5,7 @@ variable "name_policy" {
 
 variable "ad_policy" {
   type = string
-
+  default = ""
 }
 
 variable "ipam_policy" {
