@@ -1,5 +1,5 @@
 output "hostname" {
-  value = module.name.hostname
+  value = ["${module.name.*.hostname}"]
 }
 
 output "dns_suffix" {
@@ -35,7 +35,7 @@ output "secondary_dns" {
 }
 
 output "fqdn" {
-  value = module.name.fqdn
+  value =["${module.name.*.fqdn}"]
 }
 
 output "ad_ou" {

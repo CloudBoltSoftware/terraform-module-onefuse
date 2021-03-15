@@ -1,5 +1,6 @@
 module "name" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming"
+    count = "${var.name_policy == "" ? 0 : var.instance_count}"
     policy = var.name_policy
     template_properties = var.template_properties
 }
@@ -8,7 +9,7 @@ module "ad_computer" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ad"
     count = "${var.ad_policy == "" ? 0 : var.instance_count}"
     policy = var.ad_policy
-    hostname = module.name.hostname
+    hostname = "${module.name.hostname == "" ? var.hostname : module.name[count.index].hostname}"
     template_properties = var.template_properties
 }
 

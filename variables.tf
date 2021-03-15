@@ -3,6 +3,20 @@ variable "name_policy" {
 
 }
 
+variable "hostname" {
+  type = string
+  default = ""
+}
+
+variable "ip_address" {
+  type = string
+  default = ""
+}
+
+variable "dns_suffix" {
+  type = string
+  default = ""
+}
 variable "ad_policy" {
   type = string
   default = ""
