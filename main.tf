@@ -6,7 +6,7 @@ module "name" {
 
 module "ad_computer" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ad"
-    "${var.ad_policy == "" ? 0 : var.instance_count}"
+    count = "${var.ad_policy == "" ? 0 : var.instance_count}"
     policy = var.ad_policy
     hostname = module.name.hostname
     template_properties = var.template_properties
