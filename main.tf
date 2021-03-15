@@ -16,7 +16,7 @@ module "ad_computer" {
 module "ipam" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ipam"
     policy = var.ipam_policy
-    hostname = module.name.hostname
+    hostname = "${module.name.hostname == "" ? var.hostname : module.name[count.index].hostname}"
     template_properties = var.template_properties
 }
 
@@ -25,6 +25,6 @@ module "dns" {
     policy = var.dns_policy
     ip_address = module.ipam.ip_address
     dns_zones = module.name.dns_suffix
-    hostname = module.name.hostname
+    hostname = "${module.name.hostname == "" ? var.hostname : module.name[count.index].hostname}"
     template_properties = var.template_properties
 }
