@@ -8,6 +8,11 @@ variable "ad_policy" {
   default = ""
 }
 
+variable "use_ad" {
+  type = string
+  default = ""
+}
+
 variable "ipam_policy" {
   type = string
   default = ""

@@ -3,6 +3,11 @@ variable "policy" {
   default = ""
 }
 
+variable "use_ad" {
+  type = string
+  default = ""
+}
+
 variable "hostname" {
   type = string
   default = ""

@@ -1,6 +1,6 @@
 module "name" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=v1.2-beta.1"
-    count = "${var.name_policy == "" ? 0 : var.instance_count}"
+    count = "${var.use_ad == "" ? 0 : var.instance_count}"
     policy = var.name_policy
     template_properties = var.template_properties
 }

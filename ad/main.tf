@@ -1,6 +1,6 @@
 // OneFuse Data Source for AD Policy to lookup policy ID
 data "onefuse_ad_policy" "policy" {
-  count = "${var.policy == "" ? 0 : var.instance_count}"
+  count = "${var.use_ad == "" ? 0 : var.instance_count}"
   name = var.policy
 }
 
