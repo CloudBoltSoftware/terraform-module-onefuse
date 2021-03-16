@@ -1,25 +1,25 @@
 output "hostname" {
-  value = ["${module.name.*.hostname}"]
+  value = [module.name.*.hostname]
 }
 
 output "dns_suffix" {
-  value = ["${module.name.*.dns_suffix}"]
+  value = [module.name.*.dns_suffix]
 }
 
 output "ip_address" {
-  value = ["${module.ipam.*.ip_address}"]
+  value = [module.ipam.*.ip_address]
 }
 
 output "netmask" {
-  value = ["${module.ipam.*.netmask}"]
+  value = [module.ipam.*.netmask]
 }
 
 output "gateway" {
-  value = ["${module.ipam.*.gateway}"]
+  value = [module.ipam.*.gateway]
 }
 
 output "network" {
-  value = ["${module.ipam.*.network}"]
+  value = [module.ipam.*.network]
 }
 
 output "subnet" {
@@ -27,17 +27,17 @@ output "subnet" {
 }
 
 output "primary_dns" {
-  value = ["${module.ipam.*.primary_dns}"]
+  value = [module.ipam.*.primary_dns]
 }
 
 output "secondary_dns" {
-  value = ["${module.ipam.*.secondary_dns}"]
+  value = [module.ipam.*.secondary_dns]
 }
 
 output "fqdn" {
-  value =["${module.name.*.fqdn}"]
+  value =[module.name.*.fqdn]
 }
 
 output "ad_ou" {
-  value = ["${module.ad_computer.*.ad_ou}"]
+  value = [module.ad_computer.*.ad_ou]
 }
