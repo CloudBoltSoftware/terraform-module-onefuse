@@ -23,7 +23,7 @@ output "network" {
 }
 
 output "subnet" {
-  value = ["${module.ipam.*.subnet}"]
+  value = [module.ipam.*.subnet]
 }
 
 output "primary_dns" {
