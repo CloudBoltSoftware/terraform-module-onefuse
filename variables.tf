@@ -1,6 +1,6 @@
 variable "name_policy" {
   type = string
-
+  default = ""
 }
 
 variable "hostname" {
@@ -24,12 +24,12 @@ variable "ad_policy" {
 
 variable "ipam_policy" {
   type = string
-
+  default = ""
 }
 
 variable "dns_policy" {
   type = string
-
+  default = ""
 }
 
 variable "instance_count" {
