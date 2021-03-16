@@ -1,32 +1,32 @@
 module "name" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming"
-    count = "${var.name_policy == "" ? 0 : var.instance_count}"
+    count = var.name_policy == "" ? 0 : var.instance_count
     policy = var.name_policy
     template_properties = var.template_properties
 }
 
 module "ad_computer" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ad"
-    count = "${var.ad_policy == "" ? 0 : var.instance_count}"
+    count = var.ad_policy == "" ? 0 : var.instance_count
     policy = var.ad_policy
-    hostname = "${var.name_policy == "" ? var.hostname : module.name[count.index].hostname}"
+    hostname = var.name_policy == "" ? var.hostname : module.name[count.index].hostname
     template_properties = var.template_properties
 }
 
 module "ipam" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ipam"
-    count = "${var.ipam_policy == "" ? 0 : var.instance_count}"
+    count = var.ipam_policy == "" ? 0 : var.instance_count
     policy = var.ipam_policy
-    hostname = "${var.name_policy == "" ? var.hostname : module.name[count.index].hostname}"
+    hostname = var.name_policy == "" ? var.hostname : module.name[count.index].hostname
     template_properties = var.template_properties
 }
 
 module "dns" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//dns"
-    count = "${var.dns_policy == "" ? 0 : var.instance_count}"
+    count = var.dns_policy == "" ? 0 : var.instance_count
     policy = var.dns_policy
-    ip_address = "${var.ipam_policy == "" ? var.hostname : module.ipam[count.index].ip_address}"
-    dns_zones = "${var.name_policy == "" ? var.dns_suffix : module.name[count.index].hostname}"
-    hostname = "${var.name_policy == "" ? var.hostname : module.name[count.index].hostname}"
+    ip_address = var.ipam_policy == "" ? var.hostname : module.ipam[count.index].ip_address
+    dns_zones = var.name_policy == "" ? var.dns_suffix : module.name[count.index].hostname
+    hostname = var.name_policy == "" ? var.hostname : module.name[count.index].hostname
     template_properties = var.template_properties
 }
