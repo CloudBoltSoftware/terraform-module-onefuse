@@ -1,4 +1,4 @@
-pmodule "name" {
+module "name" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=develop"
     count = var.name_policy == "" ? 0 : var.instance_count
     policy = var.name_policy
