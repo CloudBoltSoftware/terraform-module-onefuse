@@ -1,4 +1,4 @@
-data "onefuse_static_property_set" "property_set" {
+data "onefuse_property_set" "property_set" {
   name = var.property_set
 }
 
