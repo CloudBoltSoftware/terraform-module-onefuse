@@ -1,12 +1,12 @@
-module "name" {
-    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=v1.2-beta.1"
+pmodule "name" {
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=develop"
     count = var.name_policy == "" ? 0 : var.instance_count
     policy = var.name_policy
     template_properties = var.template_properties
 }
 
 module "ad_computer" {
-    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ad?ref=v1.2-beta.1"
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ad?ref=develop"
     count = var.ad_policy == "" ? 0 : var.instance_count
     policy = var.ad_policy
     hostname = var.name_policy == "" ? var.hostname : module.name[count.index].hostname
@@ -14,7 +14,7 @@ module "ad_computer" {
 }
 
 module "ipam" {
-    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ipam?ref=v1.2-beta.1"
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ipam?ref=develop"
     count = var.ipam_policy == "" ? 0 : var.instance_count
     policy = var.ipam_policy
     hostname = var.name_policy == "" ? var.hostname : module.name[count.index].hostname
@@ -22,7 +22,7 @@ module "ipam" {
 }
 
 module "dns" {
-    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//dns?ref=v1.2-beta.1"
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//dns?ref=develop"
     count = var.dns_policy == "" ? 0 : var.instance_count
     policy = var.dns_policy
     ip_address = var.ipam_policy == "" ? var.ip_address: module.ipam[count.index].ip_address
